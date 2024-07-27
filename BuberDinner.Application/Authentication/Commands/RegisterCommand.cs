@@ -16,6 +16,7 @@ public record RegisterCommand(string FirstName, string LastName, string Email, s
     {
         public async Task<ErrorOr<AuthResult>> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
+            await Task.CompletedTask;
             if (userRepository.GetUserByEmail(request.Email) is not null)
                 return Errors.Users.DuplicateEmail;
 
