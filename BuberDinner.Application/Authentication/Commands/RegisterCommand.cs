@@ -1,7 +1,6 @@
 using BuberDinner.Application.Common.Interfaces;
 using BuberDinner.Application.Dto;
 using BuberDinner.Application.Repositories;
-using BuberDinner.Application.Services.Commands;
 using BuberDinner.Domain.Common.Errors;
 using BuberDinner.Domain.Entities;
 using ErrorOr;
@@ -17,6 +16,7 @@ public record RegisterCommand(string FirstName, string LastName, string Email, s
     {
         public async Task<ErrorOr<AuthResult>> Handle(RegisterCommand request, CancellationToken cancellationToken)
         {
+            await Task.CompletedTask;
             if (userRepository.GetUserByEmail(request.Email) is not null)
                 return Errors.Users.DuplicateEmail;
 

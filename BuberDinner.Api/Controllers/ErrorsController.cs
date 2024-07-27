@@ -13,7 +13,7 @@ public class ErrorsController : ControllerBase
         _logger = logger;
     }
 
-    [Route("/error")]
+    [HttpPost("/error")]
     public IActionResult Error()
     {
         var exception = HttpContext.Features.Get<IExceptionHandlerFeature>()?.Error;
