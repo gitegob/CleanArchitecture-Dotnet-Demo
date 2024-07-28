@@ -1,9 +1,9 @@
-using BuberDinner.Application.Common.Interfaces;
 using BuberDinner.Application.Dto;
 using BuberDinner.Application.Repositories;
-using BuberDinner.Domain.Common.Errors;
+using BuberDinner.Application.Services;
 using ErrorOr;
 using MediatR;
+using Errors = BuberDinner.Domain.Errors.Errors;
 
 namespace BuberDinner.Application.Authentication.Commands;
 

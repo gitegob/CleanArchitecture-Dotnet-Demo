@@ -4,14 +4,14 @@ using BuberDinner.Application.Authentication.Commands;
 using BuberDinner.Application.Dto;
 using Mapster;
 
-namespace BuberDinner.Api.Common.Mapping;
+namespace BuberDinner.Api.Mapping;
 
-public class AuthMappingConfig: IRegister
+public class AuthMappingConfig : IRegister
 {
     public void Register(TypeAdapterConfig config)
     {
         config.NewConfig<RegisterRequest, RegisterCommand>();
-        config.NewConfig<LoginRequest, LoginQuery >();
+        config.NewConfig<LoginRequest, LoginQuery>();
         config.NewConfig<AuthResult, AuthResponse>()
             .Map(dest => dest, src => src.User);
     }

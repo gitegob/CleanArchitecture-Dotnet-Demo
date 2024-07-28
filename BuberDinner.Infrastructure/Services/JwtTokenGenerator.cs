@@ -1,8 +1,11 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 using System.Text;
-using BuberDinner.Application.Common.Interfaces;
+using BuberDinner.Application.Services;
 using BuberDinner.Domain.Entities;
 using BuberDinner.Infrastructure.Config;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 
 namespace BuberDinner.Infrastructure.Services;
 
@@ -17,7 +20,21 @@ public class JwtTokenGenerator : IJwtTokenGenerator
 
     public string GenerateToken(User user)
     {
-        var emailBytes = Encoding.UTF8.GetBytes(user.Email + _jwtSettings.Secret);
-        return Convert.ToBase64String(emailBytes);
+        Claim[] claims =
+        [
+            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim(ClaimTypes.GivenName, user.FirstName),
+            new Claim(ClaimTypes.Email, user.Email)
+        ];
+        var securityToken = new JwtSecurityToken(
+            _jwtSettings.Issuer,
+            _jwtSettings.Audience,
+            claims,
+            expires: DateTime.Now.AddMinutes(_jwtSettings.ExpirationInMinutes),
+            signingCredentials: new SigningCredentials(
+                new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
+                SecurityAlgorithms.HmacSha256)
+        );
+        return new JwtSecurityTokenHandler().WriteToken(securityToken);
     }
 }
