@@ -1,11 +1,11 @@
 using BuberDinner.Application.Dto;
 using BuberDinner.Application.Repositories;
 using BuberDinner.Application.Services;
-using BuberDinner.Domain.Entities;
+using BuberDinner.Domain.Auth.Entities;
 using ErrorOr;
 using FluentValidation;
 using MediatR;
-using Errors = BuberDinner.Domain.Errors.Errors;
+using Errors = BuberDinner.Domain.Common.Errors.Errors;
 
 namespace BuberDinner.Application.Authentication.Commands;
 

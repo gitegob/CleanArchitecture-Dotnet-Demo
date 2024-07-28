@@ -1,5 +1,5 @@
 using BuberDinner.Application.Repositories;
-using BuberDinner.Domain.Entities;
+using BuberDinner.Domain.Auth.Entities;
 
 namespace BuberDinner.Infrastructure.Repositories;
 
