@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace BuberDinner.Domain.Entities;
+namespace BuberDinner.Domain.Auth.Entities;
 
 public class User
 {

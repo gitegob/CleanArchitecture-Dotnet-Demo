@@ -1,4 +1,4 @@
-using BuberDinner.Domain.Entities;
+using BuberDinner.Domain.Auth.Entities;
 
 namespace BuberDinner.Application.Repositories;
 
