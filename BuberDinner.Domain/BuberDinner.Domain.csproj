@@ -12,7 +12,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <Folder Include="User\" />
+        <Folder Include="Users\" />
     </ItemGroup>
 
 </Project>

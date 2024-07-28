@@ -1,10 +1,10 @@
 using BuberDinner.Domain.Common.Models;
 
-namespace BuberDinner.Domain.MenuReview.ValueObjects;
+namespace BuberDinner.Domain.Hosts.ValueObjects;
 
-public class MenuReviewId : ValueObject
+public sealed class HostId : ValueObject
 {
-    private MenuReviewId(Guid value)
+    private HostId(Guid value)
     {
         Value = value;
     }
@@ -16,6 +16,6 @@ public class MenuReviewId : ValueObject
         yield return Value;
     }
     
-    public static MenuReviewId CreateUnique() => new(Guid.NewGuid());
+    public static HostId CreateUnique() => new(Guid.NewGuid());
 
 }
