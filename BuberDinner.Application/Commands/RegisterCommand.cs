@@ -1,7 +1,7 @@
 using BuberDinner.Application.Dto;
 using BuberDinner.Application.Repositories;
 using BuberDinner.Application.Services;
-using BuberDinner.Domain.Auth.Entities;
+using BuberDinner.Domain.Users.Entities;
 using ErrorOr;
 using FluentValidation;
 using MediatR;

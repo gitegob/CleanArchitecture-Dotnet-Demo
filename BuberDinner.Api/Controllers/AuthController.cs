@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BuberDinner.Api.Controllers;
 
 [Route("auth")]
-[Tags("User")]
+[Tags("Users")]
 [AllowAnonymous]
 public class AuthController(
     ISender sender,

@@ -1,12 +1,12 @@
 using BuberDinner.Domain.Common.Models;
 using BuberDinner.Domain.Common.ValueObjects;
-using BuberDinner.Domain.Dinner.ValueObjects;
-using BuberDinner.Domain.Host.ValueObjects;
-using BuberDinner.Domain.Menu.Entities;
+using BuberDinner.Domain.Dinners.ValueObjects;
+using BuberDinner.Domain.Hosts.ValueObjects;
 using BuberDinner.Domain.Menu.ValueObjects;
-using BuberDinner.Domain.MenuReview.ValueObjects;
+using BuberDinner.Domain.MenuReviews.ValueObjects;
+using BuberDinner.Domain.Menus.Entities;
 
-namespace BuberDinner.Domain.Menu;
+namespace BuberDinner.Domain.Menus;
 
 public sealed class Menu: AggregateRoot<MenuId>
 {
