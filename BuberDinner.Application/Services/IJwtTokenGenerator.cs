@@ -1,6 +1,6 @@
 using BuberDinner.Domain.Entities;
 
-namespace BuberDinner.Application.Common.Interfaces;
+namespace BuberDinner.Application.Services;
 
 public interface IJwtTokenGenerator
 {
